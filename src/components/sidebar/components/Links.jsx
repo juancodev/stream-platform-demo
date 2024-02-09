@@ -18,9 +18,8 @@ export function SidebarLinks(props) {
   const createLinks = (routes) => {
     return routes.map((route, index) => {
       if (
-        route.layout === "/admin" ||
-        route.layout === "/auth" ||
-        route.layout === "/rtl"
+        // route.layout === "/auth" ||
+        route.layout === "/admin"
       ) {
         return (
           <Link key={index} to={route.layout + "/" + route.path}>
@@ -30,20 +29,18 @@ export function SidebarLinks(props) {
                 key={index}
               >
                 <span
-                  className={`${
-                    activeRoute(route.path) === true
-                      ? "font-bold text-brand-500 dark:text-white"
-                      : "font-medium text-gray-600"
-                  }`}
+                  className={`${activeRoute(route.path) === true
+                    ? "font-bold text-brand-500 dark:text-white"
+                    : "font-medium text-gray-600"
+                    }`}
                 >
                   {route.icon ? route.icon : <DashIcon />}{" "}
                 </span>
                 <p
-                  className={`leading-1 ml-4 flex ${
-                    activeRoute(route.path) === true
-                      ? "font-bold text-navy-700 dark:text-white"
-                      : "font-medium text-gray-600"
-                  }`}
+                  className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
+                    ? "font-bold text-navy-700 dark:text-white"
+                    : "font-medium text-gray-600"
+                    }`}
                 >
                   {route.name}
                 </p>

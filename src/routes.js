@@ -9,6 +9,7 @@ import Reports from "views/admin/reports";
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
+import SignUp from "views/auth/SignUp";
 
 // Icon Imports
 import {
@@ -22,7 +23,7 @@ import {
 const routes = [{
     name: "Dashboard",
     layout: "/admin",
-    path: "default",
+    path: "",
     icon: < MdHome className = "h-6 w-6" / > ,
     component: < MainDashboard / > ,
   },
@@ -54,6 +55,13 @@ const routes = [{
     path: "sign-in",
     icon: < MdLock className = "h-6 w-6" / > ,
     component: < SignIn / > ,
+  },
+  {
+    name: "Registro",
+    layout: "/auth",
+    path: "sign-up",
+    icon: < MdLock className = "h-6 w-6" / > ,
+    component: < SignUp / > ,
   },
 ];
 export default routes;

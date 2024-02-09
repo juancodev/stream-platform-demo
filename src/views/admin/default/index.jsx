@@ -29,8 +29,8 @@ const Dashboard = () => {
         />
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
-          title={"Spend this month"}
-          subtitle={"$642.39"}
+          title={"Total de Servicios"}
+          subtitle={"20"}
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
@@ -44,7 +44,7 @@ const Dashboard = () => {
         />
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
-          title={"New Tasks"}
+          title={"Tareas"}
           subtitle={"145"}
         />
         <Widget
