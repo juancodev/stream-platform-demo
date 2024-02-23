@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 const AuthContext = React.createContext();
 
 const AuthProvider = ({ children }) => {
-  const [userAuth, setUser] = useState({});
+  const [userAuth, setUserAuth] = useState(null);
 
   const logout = () => {
-    setUser({});
+    setUserAuth(null);
   }
 
   return (
     <>
-      <AuthContext.Provider value={{ userAuth, logout }}>
+      <AuthContext.Provider value={{ userAuth, setUserAuth, logout }}>
         {children}
       </AuthContext.Provider>
     </>
