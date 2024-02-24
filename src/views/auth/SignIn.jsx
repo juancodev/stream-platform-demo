@@ -10,14 +10,20 @@ export default function SignIn() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false)
   const navigate = useNavigate();
+
 
   const handleButtonClick = (event) => {
     event.preventDefault();
+    setError(false);
 
     if (email === 'admin@admin.com' && password === 'admin123') {
+      setError(false);
       setUserAuth({ email, password });
       navigate("/admin/", { replace: true });
+    } else {
+      setError(true)
     }
   }
 
@@ -39,11 +45,13 @@ export default function SignIn() {
             Inicia sesión con Google
           </h5>
         </div>
+
         <div className="mb-6 flex items-center  gap-3">
           <div className="h-px w-full bg-gray-200 dark:bg-navy-700" />
           <p className="text-base text-gray-600 dark:text-white"> or </p>
           <div className="h-px w-full bg-gray-200 dark:bg-navy-700" />
         </div>
+        {error && <p className='text-xs font-bold text-center text-red-800'>Email or password incorrect</p>}
         {/* Email */}
         <InputField
           variant="auth"

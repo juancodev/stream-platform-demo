@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Dropdown from "components/dropdown";
 import { FiAlignJustify } from "react-icons/fi";
-import { Link } from "react-router-dom";
 import navbarimage from "assets/img/stream-info.jpeg";
 import { BsArrowBarUp } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
@@ -11,10 +11,12 @@ import {
   IoMdInformationCircleOutline,
 } from "react-icons/io";
 import avatar from "assets/img/avatars/avatar9.png";
+import { useAuth } from 'hooks/useAuth';
 
 const Navbar = (props) => {
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
+  const { logout } = useAuth();
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -134,8 +136,8 @@ const Navbar = (props) => {
                 className="mb-2 aspect-video w-full rounded-lg"
               />
               <a
-                target="blank"
-                href="https://horizon-ui.com/pro?ref=live-free-tailwind-react"
+
+                href=' '
                 className="px-full linear flex cursor-pointer items-center justify-center rounded-xl bg-brand-500 py-[11px] font-bold text-white transition duration-200 hover:bg-brand-600 hover:text-white active:bg-brand-700 dark:bg-brand-400 dark:hover:bg-brand-300 dark:active:bg-brand-200"
               >
                 Ver Actualizaciones
@@ -193,6 +195,7 @@ const Navbar = (props) => {
                 <Link
                   to="/auth/sign-in"
                   className="mt-3 text-sm font-medium text-red-500 hover:text-red-500 transition duration-150 ease-out hover:ease-in"
+                  onClick={() => logout()}
                 >
                   Log Out
                 </Link>
