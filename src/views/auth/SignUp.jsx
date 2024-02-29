@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function SignUp() {
   return (
-    <div className="mt-16 mb-16 flex h-full w-full items-center justify-center px-2 md:mx-0 md:px-0 lg:mb-10 lg:items-center lg:justify-start xl:mt-0 xl:mb-2.5">
+    <div className="mt-16 mb-16 flex h-full w-full items-center justify-center px-2 md:mx-0 md:px-0 lg:mb-10 lg:items-center lg:justify-start 2xl:mt-0 2xl:mb-2.5">
       {/* Sign in section */}
       <div className="mt-[10vh] w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px] xl:mt-[3vh]">
         <h4 className="mb-2.5 text-4xl font-bold text-navy-700 dark:text-white">
